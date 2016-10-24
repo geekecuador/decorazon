@@ -1,3 +1,115 @@
+# -*- coding: utf-8 -*-
+from django.http import HttpResponse
 from django.shortcuts import render
-
+from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
+from social.pipeline import user
+from django.core.urlresolvers import reverse
+from django.contrib.auth import logout as auth_logout
+from django.shortcuts import redirect
+from .models import Donaciones,Codigo,Proyecto
+from paypal.standard.forms import PayPalPaymentsForm
+from django.core.exceptions import ObjectDoesNotExist
+from decorazon import settings
 # Create your views here.
+from landing.models import UserProfile
+
+@csrf_exempt
+def mashcaindex(request):
+    pry = Proyecto.objects.get(clave="MASHC")
+    porcentaje = int((pry.cantidadalcanzada * 100)/pry.cantidadbase)
+
+    print porcentaje
+    ano = '2016 '
+    pepe = 0
+    donantes = Donaciones.objects.all().count()
+    mensaje = ''
+    print pry.fecha_limite.year
+    if request.method == 'POST':
+        codigo = request.POST.get('input_text')
+        try:
+            codifo_verificar = Codigo.objects.get(codigo=codigo)
+            global valor
+            valor = codifo_verificar.valor
+            if codifo_verificar.activo:
+                donacion = Donaciones(usuario=request.user, codigo=codifo_verificar)
+                donacion.save()
+                if donacion.id:
+                    pepe = 2
+                    codifo_verificar.activo = False
+                    codifo_verificar.save()
+                else:
+                    mensaje =  "Hubo un problma en el registro, envienos a ddd@dd.com su codigo para la verificacion"
+                    pepe = 1
+            else:
+                mensaje = "El codigo ingresado ya fue usado."
+                pepe = 1
+        except ObjectDoesNotExist:
+            mensaje =  "Codigo no existe"
+            pepe = 1
+
+    if request.user.is_authenticated():
+        x = UserProfile.objects.get(user=request.user)
+        paypal_dict = {
+            "business":   settings.PAYPAL_RECEIVER_EMAIL,
+            "amount": "5.00",
+            "item_name": "Mashca de Corazon",
+            "invoice": "unique-invoice-id",
+            "notify_url": "http://localhost:8000/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://localhost:8000/mashca/",
+            "cancel_return": "http://localhost:8000/your-cancel-location/",
+            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+        }
+        paypal_dict = {
+            "business": "mashcadecorazon@gmail.com  ",
+            "amount": "10.00",
+            "item_name": "Mashca de Corazon",
+            "invoice": "unique-invoice-id",
+            "notify_url": "http://localhost:8000/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://localhost:8000/mashca/",
+            "cancel_return": "http://localhost:8000/your-cancel-location/",
+            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+        }
+        # Create the instance.
+        form = PayPalPaymentsForm(initial=paypal_dict)
+        try:
+            return render(request, 'jocha.html',
+                          {'ano': ano, 'user': request.user, 'donantes': donantes, 'porcentaje': porcentaje,
+                           'mensaje': mensaje, 'photo': x.image_file, 'form': form,
+                           'pepe': pepe,
+                           'valor': valor, 'pry': pry},
+                          content_type='text/html')
+        except Exception:
+            return render(request, 'jocha.html',
+                          {'ano': ano, 'user': request.user, 'pry': pry, 'porcentaje': porcentaje, 'donantes': donantes,
+                           'photo': x.image_file, 'form': form,
+                           'donantes': donantes, 'pepe': pepe,
+                           },
+                          content_type='text/html')
+
+    else:
+        return render(request, 'jocha.html', {'donantes': donantes,'pry':pry,'porcentaje':porcentaje}, content_type='text/html')
+
+
+def logout(request):
+    auth_logout(request)
+    return redirect('/mashca/')
+
+
+@csrf_exempt
+def notify(request):
+    return HttpResponse("Notify called")
+
+
+def gallery(request):
+    lista_url = []
+    try:
+        donantes = Donaciones.objects.filter(codigo__proyecto__clave='MASHC')
+        for persona in donantes:
+            imagen_usuario = UserProfile.objects.get(user=persona.usuario)
+            imagen_url = imagen_usuario.image_url
+            lista_url.append(imagen_url)
+        return render(request,'gallery.html',{'lista_url':lista_url},content_type='text/html')
+    except ObjectDoesNotExist:
+        return render(request,'gallery.html',{'lista_url':lista_url},content_type='text/html')
+
+

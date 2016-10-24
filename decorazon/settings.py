@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
+    'paypal.standard.ipn',
     'mashca',
     'landing',
 ]
@@ -64,6 +66,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -101,13 +106,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
 
+)
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ec'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Lima'
 
 USE_I18N = True
 
@@ -130,3 +140,33 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+SOCIAL_AUTH_FACEBOOK_KEY = '319318495087010'
+SOCIAL_AUTH_FACEBOOK_SECRET = '02337e881f6bb37f8fd2d5d673a7bdf6'
+# Twitter Keys
+SOCIAL_AUTH_TWITTER_KEY = '8hbkxWNUpBjuus0CoKsn4Dg7R'
+SOCIAL_AUTH_TWITTER_SECRET = 'LZAEVc3US4aqU8XR3XJOO80FN0p8dWP4LfRfzHdvmAdaLk7qIX'
+LOGIN_REDIRECT_URL = '/home/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/home"
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email,publish_actions']
+
+AUTH_PROFILE_MODULE = 'MashcaPicture.models.UserProfile'
+
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.mail.mail_validation',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+    'landing.pipeline.get_profile_picture',
+)
+
+
+PAYPAL_TEST = True
+
+PAYPAL_RECEIVER_EMAIL = 'mashcadecorazon@gmail.com'
