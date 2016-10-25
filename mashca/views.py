@@ -38,7 +38,7 @@ def mashcaindex(request):
                     codifo_verificar.activo = False
                     codifo_verificar.save()
                 else:
-                    mensaje =  "Hubo un problma en el registro, envienos a ddd@dd.com su codigo para la verificacion"
+                    mensaje = "Hubo un problma en el registro, envienos a ddd@dd.com su codigo para la verificacion"
                     pepe = 1
             else:
                 mensaje = "El codigo ingresado ya fue usado."
