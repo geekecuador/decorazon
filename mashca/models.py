@@ -11,7 +11,6 @@ class Proyecto(models.Model):
     cantidadbase = models.DecimalField(max_digits=8, decimal_places=2)
     cantidadalcanzada = models.DecimalField(max_digits=8, decimal_places=2)
     fecha_limite = models.DateTimeField()
-    video = models.FileField(upload_to=u'video/', max_length=200)
 
     def __str__(self):
         return self.nombre

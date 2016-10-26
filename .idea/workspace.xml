@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d56e897-983a-4fc5-a596-3ca7d06a7e83" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/l7yRo_gB_bigger.jpg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/l7yRo_gB_bigger.jpg_8IEJZrm.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/l7yRo_gB_bigger.jpg_HAXAJ7s.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/picturewidth720height720.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/picturewidth720height720_JCNpH42.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/picturewidth720height720_fa08Mde.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/picturewidth720height720_rWmoNG3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/picturewidth720height720_tE3Pm9V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/picturewidth720height720_vMsHpBU.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ProyectMashca/images/picturewidth720height720_vm5IWxw.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/landing/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/landing/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mashca/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mashca/migrations/__init__.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorazon/settings.py" afterPath="$PROJECT_DIR$/decorazon/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/jocha.html" afterPath="$PROJECT_DIR$/templates/jocha.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video/lajocha.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video/lajocha_C2AFA54.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video/lajocha_KA0lI2k.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video/lajocha_NvxAkdu.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video/lajocha_OjeLfcu.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video/lajocha_iNtaNxV.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video/lajocha_k23d3n7.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/video/lajocha_oJ0CI91.mp4" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mashca/models.py" afterPath="$PROJECT_DIR$/mashca/models.py" />
     </list>
     <ignored path="decorazon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,10 +62,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/decorazon/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="488">
+                <state relative-caret-position="578">
                   <caret line="161" column="47" selection-start-line="161" selection-start-column="47" selection-end-line="161" selection-end-column="47" />
                   <folding />
                 </state>
@@ -100,6 +92,16 @@
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/mashca/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="465">
+                  <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -212,11 +214,11 @@
         <option value="$PROJECT_DIR$/templates/gallery.html" />
         <option value="$PROJECT_DIR$/landing/views.py" />
         <option value="$PROJECT_DIR$/static/jocha/js/init.js" />
-        <option value="$PROJECT_DIR$/mashca/models.py" />
         <option value="$PROJECT_DIR$/mashca/views.py" />
         <option value="$PROJECT_DIR$/instalar.txt" />
         <option value="$PROJECT_DIR$/decorazon/settings.py" />
         <option value="$PROJECT_DIR$/templates/jocha.html" />
+        <option value="$PROJECT_DIR$/mashca/models.py" />
       </list>
     </option>
   </component>
@@ -999,16 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mashca/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mashca/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -1061,8 +1053,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/decorazon/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="578">
           <caret line="161" column="47" selection-start-line="161" selection-start-column="47" selection-end-line="161" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mashca/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
