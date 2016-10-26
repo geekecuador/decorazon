@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'urban_prod',
         'USER': 'u_urban',
-        'PASSWORD': '123',
+        'PASSWORD': 'davidpullo',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -140,9 +140,9 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
 
 SOCIAL_AUTH_FACEBOOK_KEY = '319318495087010'
 SOCIAL_AUTH_FACEBOOK_SECRET = '02337e881f6bb37f8fd2d5d673a7bdf6'
