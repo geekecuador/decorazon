@@ -10,3 +10,4 @@ pytz==2016.7
 requests==2.11.1
 requests-oauthlib==0.7.0
 six==1.10.0
+twython==3.4.0

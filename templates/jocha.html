@@ -197,7 +197,7 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
                         <div class="row">
                             <div class="col m12 s12 center">
                                 <h5 style="color: #eee;"><br>Historia</h5>
-                                <p style="color: #eee; text-align: justify">Es un modelo de gestión constructiva, hemos consolidado el proyecto junto empresas de renombre en la región;  dentro del concepto general del CD está implícitamente y explícitamente la identidad alegre y cordial del pueblo latacungueño, también es un modelo de gestión inclusiva para proyectos emergentes y existentes que reflejen la identidad de la ciudad.</p>
+                                <p style="color: #eee; text-align: justify"></p>
 
                             </div>
                         </div>
@@ -209,6 +209,7 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
 
                             <div class="row" style="height: 400px;">
                                 <ul class="slides" style="height: 200px">
+                                    {% for comentario in comentarios %}
                                     <li>
                                         <div class="caption center-align">
                                             <div class="card-panel">
@@ -218,31 +219,17 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
                                                     </div>
                                                     <div class="col s10">
                                                         <span class="black-text">
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at consectetur corporis deserunt distinctio dolore earum et in, minima modi nobis odio porro praesentium quo quos ratione, recusandae tempore vitae.
+                                                           {{ comentario }}
                                                         </span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
+                                    {% endfor %}
 
-                                    <li>
-                                        <div class="caption center-align">
 
-                                            <div class="card-panel">
-                                                <div class="valign-wrapper">
-                                                    <div class="col s2">
-                                                        <img src="http://www.ifema.es/PresentacionInet/groups/public/documents/imagen/ins_p_513234.jpg" alt="" class="circle responsive-img"> &lt;!&ndash; notice the "circle" class &ndash;&gt;
-                                                    </div>
-                                                    <div class="col s10">
-                                                    <span class="black-text">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at consectetur corporis deserunt distinctio dolore earum et in, minima modi nobis odio porro praesentium quo quos ratione, recusandae tempore vitae.
-                                                    </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -258,7 +245,7 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
                         <div class="collapsible-header"><i class="material-icons"></i>¿Qué es Mashca de Corazón?</div>
-                        <div class="collapsible-body" style="background-color: #eee"><p>Es una promesa de calidad para la ciudad de Latacunga en todos los sentidos para productos y servicios.</p></div>
+                        <div class="collapsible-body" style="background-color: #eee"><p>Es un modelo de gestión constructiva, hemos consolidado el proyecto junto empresas de renombre en la región;  dentro del concepto general del CD está implícitamente y explícitamente la identidad alegre y cordial del pueblo latacungueño, también es un modelo de gestión inclusiva para proyectos emergentes y existentes que reflejen la identidad de la ciudad.</p></div>
                     </li>
                     <li>
                         <div class="collapsible-header"><i class="material-icons"></i>¿Para qué vamos a utilizar el dinero recaudado?</div>

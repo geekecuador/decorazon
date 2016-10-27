@@ -12,13 +12,32 @@ from django.core.exceptions import ObjectDoesNotExist
 from decorazon import settings
 # Create your views here.
 from landing.models import UserProfile
+from Twython import Twython
+
+
 
 @csrf_exempt
 def mashcaindex(request):
+    TWITTER_APP_KEY = 'O8eDCWgXvylYlGabAci93ppd7'  # supply the appropriate value
+    TWITTER_APP_KEY_SECRET = 'pILt8uKye8rKgJTjYCsTX6z8Vv6zBsXacCBkyqOjbGr7srz0bm'
+    TWITTER_ACCESS_TOKEN = '52223076-Lz9IZxqNFhURxgK9cvAWTwxmHg25saSKPoHxwizml'
+    TWITTER_ACCESS_TOKEN_SECRET = 'yz5KMoSSripHbqH23zlvg7WeZVdsFXLcU7JyxOXU2ccRE'
+
+    twitter = Twython(app_key=TWITTER_APP_KEY,
+                app_secret=TWITTER_APP_KEY_SECRET,
+                oauth_token=TWITTER_ACCESS_TOKEN,
+                oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
+
+    results = twitter.search(q='#mashcadecorazon',  # **supply whatever query you want here**
+                      count=3)
+    tweets = results['statuses']
+    comentarios = []
+    for tweet1 in tweets:
+        tweet1['text'] = Twython.html_for_tweet(tweet1)
+        print tweet1['text']
+        comentarios.append(tweet1['text'])
     pry = Proyecto.objects.get(clave="MASHC")
     porcentaje = int((pry.cantidadalcanzada * 100)/pry.cantidadbase)
-
-    print porcentaje
     ano = '2016 '
     pepe = 0
     donantes = Donaciones.objects.all().count()
@@ -73,21 +92,21 @@ def mashcaindex(request):
         form = PayPalPaymentsForm(initial=paypal_dict)
         try:
             return render(request, 'jocha.html',
-                          {'ano': ano, 'user': request.user, 'donantes': donantes, 'porcentaje': porcentaje,
+                          {'ano': ano, 'user': request.user, 'donantes': donantes,'comentarios':comentarios, 'porcentaje': porcentaje,
                            'mensaje': mensaje, 'photo': x.image_file, 'form': form,
                            'pepe': pepe,
                            'valor': valor, 'pry': pry},
                           content_type='text/html')
         except Exception:
             return render(request, 'jocha.html',
-                          {'ano': ano, 'user': request.user, 'pry': pry, 'porcentaje': porcentaje, 'donantes': donantes,
+                          {'ano': ano, 'user': request.user, 'pry': pry,'comentarios':comentarios, 'porcentaje': porcentaje, 'donantes': donantes,
                            'photo': x.image_file, 'form': form,
                            'donantes': donantes, 'pepe': pepe,
                            },
                           content_type='text/html')
 
     else:
-        return render(request, 'jocha.html', {'donantes': donantes,'pry':pry,'porcentaje':porcentaje}, content_type='text/html')
+        return render(request, 'jocha.html', {'donantes': donantes,'comentarios':comentarios,'pry':pry,'porcentaje':porcentaje}, content_type='text/html')
 
 
 def logout(request):
