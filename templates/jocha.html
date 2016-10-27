@@ -210,18 +210,18 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
 
                             <div class="row" style="height: 400px;">
                                 <ul class="slides" style="height: 200px">
-                                    {% for comentario in comentarios ; for imagen_perfil in imagenes_perfil %}
+                                    {% for a,b in comentarios_twitter %}
 
                                     <li>
                                         <div class="caption center-align">
                                             <div class="card-panel">
                                                 <div class="valign-wrapper">
                                                     <div class="col s2">
-                                                        <img src="{{ imagen_perfil }}" alt="" class="circle responsive-img"> &lt;!&ndash; notice the "circle" class &ndash;&gt;
+                                                        <img src="{{ b }}" alt="" class="circle responsive-img"> &lt;!&ndash; notice the "circle" class &ndash;&gt;
                                                     </div>
                                                     <div class="col s10">
                                                         <span class="black-text">
-                                                           {% autoescape off %}{{ comentario }}{% endautoescape %}
+                                                           {% autoescape off %}{{ a }}{% endautoescape %}
                                                         </span>
                                                     </div>
                                                 </div>
@@ -230,7 +230,7 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
                                     </li>
                                     {% endfor %}
 
-                                   
+
 
 
 

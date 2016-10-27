@@ -41,6 +41,7 @@ def mashcaindex(request):
     pry = Proyecto.objects.get(clave="MASHC")
     porcentaje = int((pry.cantidadalcanzada * 100)/pry.cantidadbase)
     ano = '2016 '
+    comentarios_twitter = zip(comentarios, imagenes_perfil)
     pepe = 0
     donantes = Donaciones.objects.all().count()
     mensaje = ''
@@ -128,7 +129,7 @@ def mashcaindex(request):
         form1000 = PayPalPaymentsForm(initial=paypal_dict1000)
         try:
             return render(request, 'jocha.html',
-                          {'ano': ano, 'user': request.user, 'donantes': donantes,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios, 'porcentaje': porcentaje,
+                          {'ano': ano, 'user': request.user, 'donantes': donantes,'comentarios_twitter':comentarios_twitter,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios, 'porcentaje': porcentaje,
                            'mensaje': mensaje, 'photo': x.image_file, 'form': form10,
                            'pepe': pepe,
                            'valor': valor, 'pry': pry},
@@ -137,12 +138,12 @@ def mashcaindex(request):
             return render(request, 'jocha.html',
                           {'ano': ano, 'user': request.user, 'pry': pry,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios, 'porcentaje': porcentaje, 'donantes': donantes,
                            'photo': x.image_file, 'form': form10,
-                           'donantes': donantes, 'pepe': pepe,
+                           'donantes': donantes, 'pepe': pepe,'comentarios_twitter':comentarios_twitter,
                            },
                           content_type='text/html')
 
     else:
-        return render(request, 'jocha.html', {'donantes': donantes,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios,'pry':pry,'porcentaje':porcentaje}, content_type='text/html')
+        return render(request, 'jocha.html', {'donantes': donantes,'comentarios_twitter':comentarios_twitter,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios,'pry':pry,'porcentaje':porcentaje}, content_type='text/html')
 
 
 def logout(request):
