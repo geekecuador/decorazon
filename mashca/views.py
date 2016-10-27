@@ -37,7 +37,8 @@ def mashcaindex(request):
     for tweet1 in tweets:
         tweet1['text'] = Twython.html_for_tweet(tweet1)
         comentarios.append(tweet1['text'])
-        imagenes_perfil.append(tweet1['user']['profile_image_url_https'])
+        imagenes_perfil.append('https://twitter.com/'+tweet1['user']['screen_name']+'/profile_image?size=original')
+
     pry = Proyecto.objects.get(clave="MASHC")
     porcentaje = int((pry.cantidadalcanzada * 100)/pry.cantidadbase)
     ano = '2016 '
@@ -76,9 +77,9 @@ def mashcaindex(request):
             "amount": "5.00",
             "item_name": "Mashca de Corazon",
             "invoice": "unique-invoice-id",
-            "notify_url": "http://localhost:8000/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://localhost:8000/mashca/",
-            "cancel_return": "http://localhost:8000/your-cancel-location/",
+            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://lajocha.com/mashca/",
+            "cancel_return": "http://lajocha.com/your-cancel-location/",
             "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
         }
         paypal_dict20 = {
@@ -86,9 +87,9 @@ def mashcaindex(request):
             "amount": "10.00",
             "item_name": "Mashca de Corazon",
             "invoice": "unique-invoice-id",
-            "notify_url": "http://localhost:8000/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://localhost:8000/mashca/",
-            "cancel_return": "http://localhost:8000/your-cancel-location/",
+            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://lajocha.com/mashca/",
+            "cancel_return": "http://lajocha.com/your-cancel-location/",
             "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
         }
         paypal_dict100 = {
@@ -96,9 +97,9 @@ def mashcaindex(request):
             "amount": "10.00",
             "item_name": "Mashca de Corazon",
             "invoice": "unique-invoice-id",
-            "notify_url": "http://localhost:8000/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://localhost:8000/mashca/",
-            "cancel_return": "http://localhost:8000/your-cancel-location/",
+            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://lajocha.com/mashca/",
+            "cancel_return": "http://lajocha.com/your-cancel-location/",
             "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
         }
         paypal_dict500 = {
@@ -106,9 +107,9 @@ def mashcaindex(request):
             "amount": "10.00",
             "item_name": "Mashca de Corazon",
             "invoice": "unique-invoice-id",
-            "notify_url": "http://localhost:8000/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://localhost:8000/mashca/",
-            "cancel_return": "http://localhost:8000/your-cancel-location/",
+            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://lajocha.com/mashca/",
+            "cancel_return": "http://lajocha.com/your-cancel-location/",
             "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
         }
         paypal_dict1000 = {
