@@ -68,7 +68,7 @@ def mashcaindex(request):
 
     if request.user.is_authenticated():
         x = UserProfile.objects.get(user=request.user)
-        paypal_dict = {
+        paypal_dict10 = {
             "business":   settings.PAYPAL_RECEIVER_EMAIL,
             "amount": "5.00",
             "item_name": "Mashca de Corazon",
@@ -78,7 +78,7 @@ def mashcaindex(request):
             "cancel_return": "http://localhost:8000/your-cancel-location/",
             "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
         }
-        paypal_dict = {
+        paypal_dict20 = {
             "business": "mashcadecorazon@gmail.com  ",
             "amount": "10.00",
             "item_name": "Mashca de Corazon",
@@ -88,19 +88,53 @@ def mashcaindex(request):
             "cancel_return": "http://localhost:8000/your-cancel-location/",
             "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
         }
+        paypal_dict100 = {
+            "business": "mashcadecorazon@gmail.com  ",
+            "amount": "10.00",
+            "item_name": "Mashca de Corazon",
+            "invoice": "unique-invoice-id",
+            "notify_url": "http://localhost:8000/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://localhost:8000/mashca/",
+            "cancel_return": "http://localhost:8000/your-cancel-location/",
+            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+        }
+        paypal_dict500 = {
+            "business": "mashcadecorazon@gmail.com  ",
+            "amount": "10.00",
+            "item_name": "Mashca de Corazon",
+            "invoice": "unique-invoice-id",
+            "notify_url": "http://localhost:8000/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://localhost:8000/mashca/",
+            "cancel_return": "http://localhost:8000/your-cancel-location/",
+            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+        }
+        paypal_dict1000 = {
+            "business": "mashcadecorazon@gmail.com  ",
+            "amount": "10.00",
+            "item_name": "Mashca de Corazon",
+            "invoice": "unique-invoice-id",
+            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
+            "return_url": "http://lajocha.com/mashca/",
+            "cancel_return": "http://lajocha.com/your-cancel-location/",
+            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+        }
         # Create the instance.
-        form = PayPalPaymentsForm(initial=paypal_dict)
+        form10 = PayPalPaymentsForm(initial=paypal_dict10)
+        form20 = PayPalPaymentsForm(initial=paypal_dict20)
+        form100 = PayPalPaymentsForm(initial=paypal_dict100)
+        form500 = PayPalPaymentsForm(initial=paypal_dict500)
+        form1000 = PayPalPaymentsForm(initial=paypal_dict1000)
         try:
             return render(request, 'jocha.html',
                           {'ano': ano, 'user': request.user, 'donantes': donantes,'comentarios':comentarios, 'porcentaje': porcentaje,
-                           'mensaje': mensaje, 'photo': x.image_file, 'form': form,
+                           'mensaje': mensaje, 'photo': x.image_file, 'form': form10,
                            'pepe': pepe,
                            'valor': valor, 'pry': pry},
                           content_type='text/html')
         except Exception:
             return render(request, 'jocha.html',
                           {'ano': ano, 'user': request.user, 'pry': pry,'comentarios':comentarios, 'porcentaje': porcentaje, 'donantes': donantes,
-                           'photo': x.image_file, 'form': form,
+                           'photo': x.image_file, 'form': form10,
                            'donantes': donantes, 'pepe': pepe,
                            },
                           content_type='text/html')

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d56e897-983a-4fc5-a596-3ca7d06a7e83" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/jocha.html" afterPath="$PROJECT_DIR$/templates/jocha.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mashca/views.py" afterPath="$PROJECT_DIR$/mashca/views.py" />
     </list>
     <ignored path="decorazon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,8 +67,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mashca/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="89" selection-end-column="9" />
+                <state relative-caret-position="355">
+                  <caret line="117" column="48" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
                   <folding>
                     <element signature="e#24#60#0" expanded="true" />
                   </folding>
@@ -212,8 +212,8 @@
         <option value="$PROJECT_DIR$/mashca/urls.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/decorazon/settings.py" />
-        <option value="$PROJECT_DIR$/mashca/views.py" />
         <option value="$PROJECT_DIR$/templates/jocha.html" />
+        <option value="$PROJECT_DIR$/mashca/views.py" />
       </list>
     </option>
   </component>
@@ -1046,8 +1046,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mashca/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="89" selection-end-column="9" />
+        <state relative-caret-position="355">
+          <caret line="117" column="48" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
           <folding>
             <element signature="e#24#60#0" expanded="true" />
           </folding>
