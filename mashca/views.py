@@ -30,7 +30,7 @@ def mashcaindex(request):
                 oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
 
     results = twitter.search(q='#mashcadecorazon',  # **supply whatever query you want here**
-                      count=3)
+                      count=5)
     tweets = results['statuses']
     comentarios = []
     imagenes_perfil = []

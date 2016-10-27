@@ -210,8 +210,8 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
 
                             <div class="row" style="height: 400px;">
                                 <ul class="slides" style="height: 200px">
-                                    {% for comentario in comentarios %}
-                                    {% for imagen_perfil in imagenes_perfil %}
+                                    {% for comentario in comentarios ; for imagen_perfil in imagenes_perfil %}
+
                                     <li>
                                         <div class="caption center-align">
                                             <div class="card-panel">
@@ -230,7 +230,7 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
                                     </li>
                                     {% endfor %}
 
-                                    {% endfor %}
+                                   
 
 
 
