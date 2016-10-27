@@ -37,7 +37,7 @@ def mashcaindex(request):
     for tweet1 in tweets:
         tweet1['text'] = Twython.html_for_tweet(tweet1)
         comentarios.append(tweet1['text'])
-        imagenes_perfil.append(tweet1['profile_image_url_https'])
+        imagenes_perfil.append(tweet1['user']['profile_image_url_https'])
     pry = Proyecto.objects.get(clave="MASHC")
     porcentaje = int((pry.cantidadalcanzada * 100)/pry.cantidadbase)
     ano = '2016 '
