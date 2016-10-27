@@ -219,7 +219,7 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
                                                     </div>
                                                     <div class="col s10">
                                                         <span class="black-text">
-                                                           {{ comentario }}
+                                                           {% autoescape off %}{{ comentario }}{% endautoescape %}
                                                         </span>
                                                     </div>
                                                 </div>
