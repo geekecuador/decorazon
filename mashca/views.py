@@ -33,9 +33,11 @@ def mashcaindex(request):
                       count=3)
     tweets = results['statuses']
     comentarios = []
+    imagenes_perfil = []
     for tweet1 in tweets:
         tweet1['text'] = Twython.html_for_tweet(tweet1)
         comentarios.append(tweet1['text'])
+        imagenes_perfil.append(tweet1['profile_image_url_https'])
     pry = Proyecto.objects.get(clave="MASHC")
     porcentaje = int((pry.cantidadalcanzada * 100)/pry.cantidadbase)
     ano = '2016 '
@@ -126,21 +128,21 @@ def mashcaindex(request):
         form1000 = PayPalPaymentsForm(initial=paypal_dict1000)
         try:
             return render(request, 'jocha.html',
-                          {'ano': ano, 'user': request.user, 'donantes': donantes,'comentarios':comentarios, 'porcentaje': porcentaje,
+                          {'ano': ano, 'user': request.user, 'donantes': donantes,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios, 'porcentaje': porcentaje,
                            'mensaje': mensaje, 'photo': x.image_file, 'form': form10,
                            'pepe': pepe,
                            'valor': valor, 'pry': pry},
                           content_type='text/html')
         except Exception:
             return render(request, 'jocha.html',
-                          {'ano': ano, 'user': request.user, 'pry': pry,'comentarios':comentarios, 'porcentaje': porcentaje, 'donantes': donantes,
+                          {'ano': ano, 'user': request.user, 'pry': pry,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios, 'porcentaje': porcentaje, 'donantes': donantes,
                            'photo': x.image_file, 'form': form10,
                            'donantes': donantes, 'pepe': pepe,
                            },
                           content_type='text/html')
 
     else:
-        return render(request, 'jocha.html', {'donantes': donantes,'comentarios':comentarios,'pry':pry,'porcentaje':porcentaje}, content_type='text/html')
+        return render(request, 'jocha.html', {'donantes': donantes,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios,'pry':pry,'porcentaje':porcentaje}, content_type='text/html')
 
 
 def logout(request):
