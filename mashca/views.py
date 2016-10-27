@@ -12,7 +12,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from decorazon import settings
 # Create your views here.
 from landing.models import UserProfile
-from Twython import Twython
+from twython import Twython
+
 
 
 
