@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d56e897-983a-4fc5-a596-3ca7d06a7e83" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/cancel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/done.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/landing/urls.py" afterPath="$PROJECT_DIR$/landing/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mashca/views.py" afterPath="$PROJECT_DIR$/mashca/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/done.html" afterPath="$PROJECT_DIR$/templates/done.html" />
     </list>
     <ignored path="decorazon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -129,8 +125,8 @@
           <file leaf-file-name="done.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/done.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="676">
-                  <caret line="904" column="10" selection-start-line="904" selection-start-column="10" selection-end-line="904" selection-end-column="10" />
+                <state relative-caret-position="661">
+                  <caret line="903" column="58" selection-start-line="903" selection-start-column="58" selection-end-line="903" selection-end-column="58" />
                   <folding />
                 </state>
               </provider>
@@ -1241,8 +1237,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/done.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="904" column="10" selection-start-line="904" selection-start-column="10" selection-end-line="904" selection-end-column="10" />
+        <state relative-caret-position="661">
+          <caret line="903" column="58" selection-start-line="903" selection-start-column="58" selection-end-line="903" selection-end-column="58" />
           <folding />
         </state>
       </provider>
