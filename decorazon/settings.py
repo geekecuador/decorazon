@@ -173,6 +173,6 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 
-PAYPAL_TEST = True
+PAYPAL_TEST = False
 
 PAYPAL_RECEIVER_EMAIL = 'mashcadecorazon@gmail.com'
