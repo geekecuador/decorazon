@@ -194,7 +194,7 @@ def payment_done(request):
 
 @csrf_exempt
 def payment_canceled(request):
-    return render(request, 'jocha.html')
+    return redirect('http://lajocha.com/mashca')
 
 
 def gallery(request):

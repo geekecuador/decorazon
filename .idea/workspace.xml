@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d56e897-983a-4fc5-a596-3ca7d06a7e83" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/done.html" afterPath="$PROJECT_DIR$/templates/done.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mashca/views.py" afterPath="$PROJECT_DIR$/mashca/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <ignored path="decorazon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,6 +93,24 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="357" column="108" selection-start-line="357" selection-start-column="108" selection-end-line="357" selection-end-column="108" />
+                  <folding>
+                    <element signature="e#19164#20791#0#HTML" expanded="false" />
+                    <element signature="e#21966#22330#0#HTML" expanded="false" />
+                    <element signature="e#22515#22585#0#HTML" expanded="false" />
+                    <element signature="e#22721#22887#0#HTML" expanded="false" />
+                    <marker date="1477696223000" expanded="false" signature="3248:3262" ph="..." />
+                    <marker date="1477696223000" expanded="false" signature="11921:12004" ph="..." />
+                    <marker date="1477696223000" expanded="false" signature="12534:12545" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mashca/urls.py">
               <provider selected="true" editor-type-id="text-editor">
@@ -107,8 +126,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mashca/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="445">
-                  <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+                <state relative-caret-position="580">
+                  <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
                   <folding>
                     <element signature="e#24#60#0" expanded="true" />
                     <element signature="e#3062#3508#0" expanded="false" />
@@ -122,10 +141,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="done.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="done.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/done.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="661">
+                <state relative-caret-position="586">
                   <caret line="903" column="58" selection-start-line="903" selection-start-column="58" selection-end-line="903" selection-end-column="58" />
                   <folding />
                 </state>
@@ -283,7 +302,6 @@
         <option value="$PROJECT_DIR$/templates/gallery.html" />
         <option value="$PROJECT_DIR$/static/jocha/js/init.js" />
         <option value="$PROJECT_DIR$/instalar.txt" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/mashca/apps.py" />
         <option value="$PROJECT_DIR$/mashca/models.py" />
         <option value="$PROJECT_DIR$/decorazon/urls.py" />
@@ -295,8 +313,9 @@
         <option value="$PROJECT_DIR$/landing/views.py" />
         <option value="$PROJECT_DIR$/templates/jocha.html" />
         <option value="$PROJECT_DIR$/landing/urls.py" />
-        <option value="$PROJECT_DIR$/mashca/views.py" />
         <option value="$PROJECT_DIR$/templates/done.html" />
+        <option value="$PROJECT_DIR$/mashca/views.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -1139,18 +1158,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="348" column="16" selection-start-line="348" selection-start-column="16" selection-end-line="348" selection-end-column="16" />
-          <folding>
-            <marker date="1477512422000" expanded="false" signature="3248:3262" ph="..." />
-            <marker date="1477512422000" expanded="false" signature="11921:12004" ph="..." />
-            <marker date="1477512422000" expanded="false" signature="12534:12545" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/decorazon/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1535">
@@ -1219,10 +1226,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/done.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="903" column="58" selection-start-line="903" selection-start-column="58" selection-end-line="903" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mashca/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+        <state relative-caret-position="580">
+          <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
           <folding>
             <element signature="e#24#60#0" expanded="true" />
             <element signature="e#3062#3508#0" expanded="false" />
@@ -1235,11 +1250,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/done.html">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="903" column="58" selection-start-line="903" selection-start-column="58" selection-end-line="903" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="357">
+          <caret line="357" column="108" selection-start-line="357" selection-start-column="108" selection-end-line="357" selection-end-column="108" />
+          <folding>
+            <element signature="e#19164#20791#0#HTML" expanded="false" />
+            <element signature="e#21966#22330#0#HTML" expanded="false" />
+            <element signature="e#22515#22585#0#HTML" expanded="false" />
+            <element signature="e#22721#22887#0#HTML" expanded="false" />
+            <marker date="1477696223000" expanded="false" signature="3248:3262" ph="..." />
+            <marker date="1477696223000" expanded="false" signature="11921:12004" ph="..." />
+            <marker date="1477696223000" expanded="false" signature="12534:12545" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
