@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import logout as auth_logout
 from django.http import HttpResponse
 # Create your views here.\
 from .models import Contacto
@@ -14,3 +15,7 @@ def index(request):
         if (contacto.save()):
             mensaje = True
     return render(request,'index.html',{'ano':ano,'mensaje':mensaje})
+
+def logout(request):
+    auth_logout(request)
+    return redirect('/')
