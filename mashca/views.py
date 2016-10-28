@@ -63,7 +63,7 @@ def mashcaindex(request):
                     codifo_verificar.activo = False
                     codifo_verificar.save()
                 else:
-                    mensaje = "Hubo un problma en el registro, envienos a ddd@dd.com su codigo para la verificacion"
+                    mensaje = "Hubo un problema en el registro, envienos a ddd@dd.com su codigo para la verificacion"
                     pepe = 1
             else:
                 mensaje = "El codigo ingresado ya fue usado."
@@ -74,77 +74,92 @@ def mashcaindex(request):
 
     if request.user.is_authenticated():
         x = UserProfile.objects.get(user=request.user)
+        paypal_dict5 = {
+            "business": settings.PAYPAL_RECEIVER_EMAIL,
+            "amount": "5.00",
+            "item_name": "Mashca de Corazón $5",
+            "invoice": invoice,
+            'currency_code': 'USD',
+            "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
+            'return_url': 'http://{}{}'.format(host,
+                                               reverse('mashca:payment_done')),
+            'cancel_return': 'http://{}{}'.format(host,
+                                                  reverse('mashca:payment_canceled')),
+            "custom": x.user.username,
+
+        }
         paypal_dict10 = {
             "business":   settings.PAYPAL_RECEIVER_EMAIL,
-            "amount": "5.00",
+            "amount": "10.00",
             "item_name": "Mashca de Corazón $10",
             "invoice": invoice,
             'currency_code': 'USD',
                "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
             'return_url': 'http://{}{}'.format(host,
-                                            reverse('payment:done')),
+                                               reverse('mashca:payment_done')),
             'cancel_return': 'http://{}{}'.format(host,
-                                        reverse('payment:canceled')),
+                                                  reverse('mashca:payment_canceled')),
             "custom": x.user.username,
 
         }
         paypal_dict20 = {
             "business": "mashcadecorazon@gmail.com  ",
-            "amount": "10.00",
+            "amount": "20.00",
             "item_name": "Mashca de Corazón $20",
             "invoice": invoice,
             'currency_code': 'USD',
             "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
             'return_url': 'http://{}{}'.format(host,
-                                               reverse('payment:done')),
+                                               reverse('mashca:payment_done')),
             'cancel_return': 'http://{}{}'.format(host,
-                                                  reverse('payment:canceled')),
+                                                  reverse('mashca:payment_canceled')),
             "custom": x.user.username,
 
         }
         paypal_dict100 = {
             "business": "mashcadecorazon@gmail.com  ",
-            "amount": "10.00",
+            "amount": "100.00",
             "item_name": "Mashca de Corazón $100",
             "invoice": invoice,
             'currency_code': 'USD',
             "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
             'return_url': 'http://{}{}'.format(host,
-                                            reverse('payment:done')),
+                                               reverse('mashca:payment_done')),
             'cancel_return': 'http://{}{}'.format(host,
-                                        reverse('payment:canceled')),
+                                                  reverse('mashca:payment_canceled')),
             "custom": x.user.username,
 
         }
         paypal_dict500 = {
             "business": "mashcadecorazon@gmail.com  ",
-            "amount": "10.00",
+            "amount": "500.00",
             "item_name": "Mashca de Corazón $500",
             "invoice": invoice,
             'currency_code': 'USD',
             "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
             'return_url': 'http://{}{}'.format(host,
-                                            reverse('payment:done')),
+                                               reverse('mashca:payment_done')),
             'cancel_return': 'http://{}{}'.format(host,
-                                        reverse('payment:canceled')),
+                                                  reverse('mashca:payment_canceled')),
             "custom": x.user.username,
 
         }
         paypal_dict1000 = {
             "business": "mashcadecorazon@gmail.com  ",
-            "amount": "10.00",
+            "amount": "1000.00",
             "item_name": "Mashca de Corazón $1000",
             "invoice": invoice,
             'currency_code': 'USD',
             "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
             'return_url': 'http://{}{}'.format(host,
-                                               reverse('payment:done')),
+                                               reverse('mashca:payment_done')),
             'cancel_return': 'http://{}{}'.format(host,
-                                                  reverse('payment:canceled')),
+                                                  reverse('mashca:payment_canceled')),
             "custom": x.user.username,
 
         }
         # Create the instance.
+        form5 = PayPalPaymentsForm(initial=paypal_dict5)
         form10 = PayPalPaymentsForm(initial=paypal_dict10)
         form20 = PayPalPaymentsForm(initial=paypal_dict20)
         form100 = PayPalPaymentsForm(initial=paypal_dict100)
@@ -153,14 +168,18 @@ def mashcaindex(request):
         try:
             return render(request, 'jocha.html',
                           {'ano': ano, 'user': request.user, 'donantes': donantes,'comentarios_twitter':comentarios_twitter,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios, 'porcentaje': porcentaje,
-                           'mensaje': mensaje, 'photo': x.image_file, 'form': form10,
+                           'mensaje': mensaje, 'photo': x.image_file, 'form10': form10,
+                           'form5': form5,'form20': form20,'form100': form100,'form500': form500,
+                           'form1000': form1000,
                            'pepe': pepe,
                            'valor': valor, 'pry': pry},
                           content_type='text/html')
         except Exception:
             return render(request, 'jocha.html',
                           {'ano': ano, 'user': request.user, 'pry': pry,'imagenes_perfil':imagenes_perfil,'comentarios':comentarios, 'porcentaje': porcentaje, 'donantes': donantes,
-                           'photo': x.image_file, 'form': form10,
+                           'photo': x.image_file, 'form10': form10,
+                           'form5': form5,'form20': form20,'form100': form100,'form500': form500,
+                           'form1000': form1000,
                            'donantes': donantes, 'pepe': pepe,'comentarios_twitter':comentarios_twitter,
                            },
                           content_type='text/html')
