@@ -33,12 +33,9 @@ class Donaciones(models.Model):
     def __str__(self):
         return self.usuario.username + self.codigo.codigo
 
+class Donacion_Paypal(models.Model):
+    usuario = models.ForeignKey(User)
+    valor = models.CharField(max_length=10)
 
-
-
-def show_me_the_money(sender, **kwargs):
-    ipn_obj = sender
-    # Undertake some action depending upon `ipn_obj`.
-    if ipn_obj.custom == "Upgrade all users!":
-        print "DAVID "
-payment_was_successful.connect(show_me_the_money)
+    def __str__(self):
+        return self.usuario.username + self.valor

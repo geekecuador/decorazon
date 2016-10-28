@@ -209,7 +209,7 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
                         <div class="slider" style="height: 200px">
 
                             <div class="row" style="height: 400px;">
-                                <ul class="slides" style="height: 200px">
+                                <ul class="slides" style="height: 200px; background-image: url('http://hotelendamo.com/wp-content/uploads/2016/03/palacio-centro-de-latacunga-atracciones.jpg');">
                                     {% for a,b in comentarios_twitter %}
 
                                     <li>
@@ -217,7 +217,7 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
                                             <div class="card-panel">
                                                 <div class="valign-wrapper">
                                                     <div class="col s2">
-                                                        <img src="{{ b }}" alt="" class="circle responsive-img"> &lt;!&ndash; notice the "circle" class &ndash;&gt;
+                                                        <img src="{{ b }}" alt="" class="circle responsive-img">
                                                     </div>
                                                     <div class="col s10">
                                                         <span class="black-text">
@@ -333,8 +333,6 @@ María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, T
 
                                                 <div id="paypal-5" class="col m4 s12 center">
                                                     {{ form.render }}
-
-
                                                 </div>
 
 

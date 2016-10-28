@@ -13,12 +13,14 @@ from decorazon import settings
 # Create your views here.
 from landing.models import UserProfile
 from twython import Twython
-
+import time
 
 
 
 @csrf_exempt
 def mashcaindex(request):
+    host = request.get_host()
+    invoice = time.strftime("%H:%M:%S") + time.strftime("%d/%m/%y")
     TWITTER_APP_KEY = 'O8eDCWgXvylYlGabAci93ppd7'  # supply the appropriate value
     TWITTER_APP_KEY_SECRET = 'pILt8uKye8rKgJTjYCsTX6z8Vv6zBsXacCBkyqOjbGr7srz0bm'
     TWITTER_ACCESS_TOKEN = '52223076-Lz9IZxqNFhURxgK9cvAWTwxmHg25saSKPoHxwizml'
@@ -75,52 +77,72 @@ def mashcaindex(request):
         paypal_dict10 = {
             "business":   settings.PAYPAL_RECEIVER_EMAIL,
             "amount": "5.00",
-            "item_name": "Mashca de Corazon",
-            "invoice": "unique-invoice-id",
-            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://lajocha.com/mashca/",
-            "cancel_return": "http://lajocha.com/your-cancel-location/",
-            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+            "item_name": "Mashca de Corazón $10",
+            "invoice": invoice,
+            'currency_code': 'USD',
+               "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
+            'return_url': 'http://{}{}'.format(host,
+                                            reverse('payment:done')),
+            'cancel_return': 'http://{}{}'.format(host,
+                                        reverse('payment:canceled')),
+            "custom": x.user.username,
+
         }
         paypal_dict20 = {
             "business": "mashcadecorazon@gmail.com  ",
             "amount": "10.00",
-            "item_name": "Mashca de Corazon",
-            "invoice": "unique-invoice-id",
-            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://lajocha.com/mashca/",
-            "cancel_return": "http://lajocha.com/your-cancel-location/",
-            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+            "item_name": "Mashca de Corazón $20",
+            "invoice": invoice,
+            'currency_code': 'USD',
+            "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
+            'return_url': 'http://{}{}'.format(host,
+                                               reverse('payment:done')),
+            'cancel_return': 'http://{}{}'.format(host,
+                                                  reverse('payment:canceled')),
+            "custom": x.user.username,
+
         }
         paypal_dict100 = {
             "business": "mashcadecorazon@gmail.com  ",
             "amount": "10.00",
-            "item_name": "Mashca de Corazon",
-            "invoice": "unique-invoice-id",
-            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://lajocha.com/mashca/",
-            "cancel_return": "http://lajocha.com/your-cancel-location/",
-            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+            "item_name": "Mashca de Corazón $100",
+            "invoice": invoice,
+            'currency_code': 'USD',
+            "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
+            'return_url': 'http://{}{}'.format(host,
+                                            reverse('payment:done')),
+            'cancel_return': 'http://{}{}'.format(host,
+                                        reverse('payment:canceled')),
+            "custom": x.user.username,
+
         }
         paypal_dict500 = {
             "business": "mashcadecorazon@gmail.com  ",
             "amount": "10.00",
-            "item_name": "Mashca de Corazon",
-            "invoice": "unique-invoice-id",
-            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://lajocha.com/mashca/",
-            "cancel_return": "http://lajocha.com/your-cancel-location/",
-            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+            "item_name": "Mashca de Corazón $500",
+            "invoice": invoice,
+            'currency_code': 'USD',
+            "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
+            'return_url': 'http://{}{}'.format(host,
+                                            reverse('payment:done')),
+            'cancel_return': 'http://{}{}'.format(host,
+                                        reverse('payment:canceled')),
+            "custom": x.user.username,
+
         }
         paypal_dict1000 = {
             "business": "mashcadecorazon@gmail.com  ",
             "amount": "10.00",
-            "item_name": "Mashca de Corazon",
-            "invoice": "unique-invoice-id",
-            "notify_url": "http://lajocha.com/mashca/pago/" + reverse('paypal-ipn'),
-            "return_url": "http://lajocha.com/mashca/",
-            "cancel_return": "http://lajocha.com/your-cancel-location/",
-            "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+            "item_name": "Mashca de Corazón $1000",
+            "invoice": invoice,
+            'currency_code': 'USD',
+            "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
+            'return_url': 'http://{}{}'.format(host,
+                                               reverse('payment:done')),
+            'cancel_return': 'http://{}{}'.format(host,
+                                                  reverse('payment:canceled')),
+            "custom": x.user.username,
+
         }
         # Create the instance.
         form10 = PayPalPaymentsForm(initial=paypal_dict10)
@@ -153,8 +175,13 @@ def logout(request):
 
 
 @csrf_exempt
-def notify(request):
-    return HttpResponse("Notify called")
+def payment_done(request):
+    return render(request, 'payment/done.html')
+
+
+@csrf_exempt
+def payment_canceled(request):
+    return render(request, 'payment/canceled.html')
 
 
 def gallery(request):

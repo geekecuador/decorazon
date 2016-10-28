@@ -1,22 +1,16 @@
+from django.shortcuts import get_object_or_404
 from paypal.standard.models import ST_PP_COMPLETED
-from paypal.standard.ipn.signals import valid_ipn_received, payment_was_flagged
+from paypal.standard.ipn.signals import valid_ipn_received
 
+from django.contrib.auth.models import User
+from models import Donacion_Paypal
 
-def payment_signal(sender, **kwargs):
-    ipn_object = sender
-    if ipn_object.payment_status == ST_PP_COMPLETED:
-        print "payment_status == ST_PP_COMPLETED"
+def payment_notification(sender, **kwargs):
+    ipn_obj = sender
+    if ipn_obj.payment_status == ST_PP_COMPLETED:
+        # payment was successful
+        user = User.objects.filter(username=ipn_obj.custom)
+        donacion = Donacion_Paypal(usuario=user, valor=ipn_obj.amount)
+        donacion.save()
+valid_ipn_received.connect(payment_notification)
 
-        """
-        Here use django-registration to authenticate
-        the User
-        """
-
-    else:
-        print str(ipn_object.payment_status)
-        print "error"
-
-valid_ipn_received.connect(payment_signal)
-payment_was_flagged.connect(payment_signal)
-
-print "SIGNALS MODULE IMPORTED"

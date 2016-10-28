@@ -6,8 +6,11 @@ urlpatterns = [
     url(r'^$', views.mashcaindex, name='mashcaindex'),
     url(r'^gallery/$', views.gallery, name='mashcagallery'),
     url(r'^logout/$', views.logout, name='mashcalogout'),
-    url(r'^paypal/', include('paypal.standard.ipn.urls')),
-    url(r'^pago/', include('paypal.standard.ipn.urls')),
+    url(r'^done/$', views.payment_done, name='done'),
+    url(r'^canceled/$', views.payment_canceled, name='canceled'),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
               static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#
+# url(r'^paypal/', include('paypal.standard.ipn.urls')),
+# url(r'^pago/', include('paypal.standard.ipn.urls')),
