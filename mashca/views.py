@@ -73,6 +73,7 @@ def mashcaindex(request):
 
     if request.user.is_authenticated():
         x = UserProfile.objects.get(user=request.user)
+        print x.user.username
         paypal_dict5 = {
             "business": settings.PAYPAL_RECEIVER_EMAIL,
             "amount": "5.00",
@@ -182,12 +183,12 @@ def logout(request):
 
 @csrf_exempt
 def payment_done(request):
-    return render(request, 'payment/done.html')
+    return render(request, 'jocha.html')
 
 
 @csrf_exempt
 def payment_canceled(request):
-    return render(request, 'payment/canceled.html')
+    return render(request, 'jocha.html')
 
 
 def gallery(request):
