@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^logout/$', views.logout, name='mashcalogout'),
     url(r'^done/$', views.payment_done, name='done'),
     url(r'^canceled/$', views.payment_canceled, name='canceled'),
-    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+    url(r'^notify/', include('paypal.standard.ipn.urls')),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
               static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
