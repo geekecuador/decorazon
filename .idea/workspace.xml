@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d56e897-983a-4fc5-a596-3ca7d06a7e83" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decorazon/urls.py" afterPath="$PROJECT_DIR$/decorazon/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mashca/urls.py" afterPath="$PROJECT_DIR$/mashca/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mashca/views.py" afterPath="$PROJECT_DIR$/mashca/views.py" />
     </list>
     <ignored path="decorazon.iws" />
@@ -69,8 +72,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mashca/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="235">
-                  <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
+                <state relative-caret-position="-1220">
+                  <caret line="82" column="62" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
                   <folding>
                     <element signature="e#24#60#0" expanded="true" />
                   </folding>
@@ -81,8 +84,8 @@
           <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/decorazon/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="68" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="68" />
+                <state relative-caret-position="360">
+                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
                   <folding>
                     <element signature="e#643#683#0" expanded="true" />
                   </folding>
@@ -93,8 +96,8 @@
           <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mashca/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="15" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="15" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="17" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -262,9 +265,9 @@
         <option value="$PROJECT_DIR$/templates/jocha.html" />
         <option value="$PROJECT_DIR$/mashca/apps.py" />
         <option value="$PROJECT_DIR$/decorazon/settings.py" />
-        <option value="$PROJECT_DIR$/mashca/urls.py" />
         <option value="$PROJECT_DIR$/mashca/models.py" />
         <option value="$PROJECT_DIR$/mashca/signals.py" />
+        <option value="$PROJECT_DIR$/mashca/urls.py" />
         <option value="$PROJECT_DIR$/decorazon/urls.py" />
         <option value="$PROJECT_DIR$/mashca/views.py" />
       </list>
@@ -1018,14 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/decorazon/lib/python2.7/site-packages/paypal/standard/ipn/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/landing/pipeline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1118,30 +1113,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/decorazon/urls.py">
+    <entry file="file://$USER_HOME$/decorazon/lib/python2.7/site-packages/paypal/standard/ipn/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="68" />
-          <folding>
-            <element signature="e#643#683#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mashca/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="15" />
+        <state relative-caret-position="150">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="17" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/decorazon/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#643#683#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mashca/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
+        <state relative-caret-position="-1220">
+          <caret line="82" column="62" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
           <folding>
             <element signature="e#24#60#0" expanded="true" />
           </folding>

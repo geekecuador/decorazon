@@ -22,6 +22,6 @@ urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^mashca/', include('mashca.urls')),
     url(r'^',include('landing.urls')),
-    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+
 
 ]
