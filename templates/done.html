@@ -1,0 +1,906 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="es" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta property="og:url"           content="http://www.lajocha.com/mashca" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Mashca de Corazon" />
+	<meta property="og:description"   content="Proyecto latacunguenos" />
+	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+
+    <link type="text/css" rel="stylesheet" href="{% static "jocha/css/materialize.min.css" %}"  media="screen,projection"/>
+    <!-- Import Jquery-UI-->
+
+    <link rel="stylesheet" href="{% static "jocha/css/jquery-ui.css" %}">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Mis CSS's -->
+
+    <link rel="stylesheet" href="{% static "jocha/css/styles.css" %}">
+
+    <link rel="stylesheet" href="{% static "jocha/css/jquery.countdown.css" %}">
+
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://use.fontawesome.com/b53e51a07d.js"></script>
+    <title>La Jocha</title>
+</head>
+
+<body>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=319318495087010";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<!-- NAV -->
+<div class="navbar-fixed">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo" style="color: #00b8d4; height: 80%; margin-top: 6px"> <img class="responsive-img" src="{% static "landing/images/logo.svg" %}" alt="Logo" style="height: 100%;"> </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" style="color: #00b8d4">LAS JOCHAS</a></li>
+                <li><a href="#blog" style="color: #00b8d4">PROYECTOS</a></li>
+                <li><a href="#" style="color: #00b8d4">CROWDFOUNDING</a></li>
+
+
+
+                                {% if user and not user.is_anonymous %}
+
+{#                 <a href="{% url 'user-logout' %}">Logout</a>#}
+                                    <li><a href="logout/" style="color: #00b8d4">SALIR</a></li>
+                    <img src="{{photo.url }}" alt="perfil" style="width: 50px; border-radius: 800px; margin-top: 6px; margin-left: 4px">
+                 {% else %}
+                 <li><a href="#login-f" class="waves-effect waves-light btn modal-trigger " style="background-color: #46b7b4">Iniciar Sesión</a></li>
+                 {% endif %}
+
+
+
+
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons" style="color: #00b8d4">menu</i></a>
+        </div>
+    </nav>
+</div>
+<!-- Login Modal -->
+<div id="login-f" class="modal row" style="width: 30%; background-color: none; background: none;">
+    <div class="">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="card-image">
+
+                    <img src="{% static "jocha/images/david.jpg" %}"style="height: 300px">
+                </div>
+                <div class="card-action center-block">
+                    <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="waves-effect waves-light btn modal-trigger" style="background-color: #46b7b4">Iniciar con Facebook</a>
+                    <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}" class="waves-effect waves-light btn modal-trigger" style="background-color: #46b7b4">Iniciar con Twitter</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- NAV -->
+
+<!-- BANNER -->
+<section class="scrollspy">
+    <h3 class="center" style="margin-top: 0"><br><img src="{% static "jocha/images/mashca.svg" %}" alt="logo" style="width: 40%"></h3><br>
+    <div class="row">
+        <div class="col m3 offset-m3 s12">
+
+            <div class="video-container">
+        <iframe width="560" height="315" src="//www.youtube.com/embed/bakzSLCA7mA?rel=0?autoplay=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+        </div>
+        <div class="col m3 s12">
+            <h5>{{ donantes }}</h5>
+            <h6>Aportantes</h6>
+
+            <div id="progressbar" style="width: 50%;"></div>
+            <h6>${{ pry.cantidadalcanzada }} alcanzado de ${{ pry.cantidadbase }}<br><br></h6>
+            <div class="row">
+                <div class="col m12">
+                    <div id="defaultCountdown"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BANNER -->
+
+<!-- Blog -->
+<section class="section scrollspy" id="blog">
+    <div>
+        <div class="row">
+            <div class="col m8">
+                <div>
+                    <h4 class="center">#mashcadecorazon </h4>
+
+
+                    <div class="row">
+                        <div class="col m12 s12">
+                            <h5>GENERALIDADES</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+
+                            <img class="responsive-img" src="{% static "jocha/images/mashcarojo.svg" %}">
+                        </div>
+                        <div class="col s8">
+                            <div class="row">
+                                <div class="m8">
+
+                                    <h5 >¿Qué es?</h5>
+
+
+
+
+
+<p style="text-align: justify;">Mashca de Corazón es un Cd (álbum musical discográfico) enfocado en la identidad y la calidad, construido colectivamente en la ciudad de Latacunga entre varios artistas, músicos e intérpretes tales como:
+María Limosnas, Valverde Reggae, Margoth Osorio, Rafael Santacruz, Porcelana, The Glass, Trio Klero, Melany Pazmiño, Lisbeth Pincha, Hermanas Angy y Meche Parreño y Xhaviero.</p>
+
+
+                                </div>
+
+
+
+
+{#                                <div class="m8">#}
+{#                                    <h5>CD Mashca de Corazón</h5>#}
+{#                                    <p style="text-align: justify">Desde un inicio en la cocepción de este proyecto estuvo presente la calidad y amor por Latacunga.</p>#}
+{#                                </div>#}
+                            </div>
+
+                            <div class="row">
+                                 <div class="col m12">
+                                  <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D1068210813219672%26fref%3Dts&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=319318495087010" width="100%" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                               </div>
+                                <div class="col m12">
+                                    <a href="https://twitter.com/intent/tweet?button_hashtag=mashcadecorazon" class="twitter-hashtag-button" data-show-count="false">Tweet #mashcadecorazon</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs">
+                            <li class="tab col s3"><a class="active" href="#historia">Historia</a></li>
+                            <li class="tab col s3"><a href="#comentarios">Comentarios</a></li>
+                            <li class="tab col s3"><a href="#video">Video</a></li>
+                            <li class="tab col s3"><a href="#patrocinadores">Patrocinadores</a></li>
+                        </ul>
+                    </div>
+                    <div id="historia" class="col s12" style="background-color: #46b7b4; height: 400px; margin-top: 0.5%">
+                        <div class="row">
+                            <div class="col m12 s12 center">
+                                <h5 style="color: #eee;"><br>Historia</h5>
+                                <p style="color: #eee; text-align: justify">
+
+                                    No sólo es amar los empedrados, ni recorrer la ciudad llena de nostalgia e historia, ni crecer con las allullas, las chugchucaras y los abuelos, tampoco es mirar el putzalahua, el Cotopaxi, los ilinizas o los curiquengues, y celebrar la fiesta de la Mama Negra, va mucho más allá.
+                                </p>
+                                 <p style="color: #eee; text-align: justify">
+
+                                  Es amar esta tierra en que nacimos, es sentirse orgulloso de ser hijo del Cotopaxi, es compartir nuestras vivencias, es buscar la calidad y la excelencia, es estudiar y trabajar fuera y siempre volver, es invertir y creer en lo nuestro, en lo propio, en pocas palabras gritar en donde estemos con orgullo “Yo soy Mashca de Corazón”.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="comentarios" class="col s12 container" style="margin-top: 0.5%;">
+
+                        <!-- SLIDERS -->
+                        <div class="slider" style="height: 200px">
+
+                            <div class="row" style="height: 400px;">
+                                <ul class="slides" style="height: 200px; background-image: url('http://hotelendamo.com/wp-content/uploads/2016/03/palacio-centro-de-latacunga-atracciones.jpg');">
+                                    {% for a,b in comentarios_twitter %}
+
+                                    <li>
+                                        <div class="caption center-align">
+                                            <div class="card-panel">
+                                                <div class="valign-wrapper">
+                                                    <div class="col s2">
+                                                        <img src="{{ b }}" alt="" class="circle responsive-img">
+                                                    </div>
+                                                    <div class="col s10">
+                                                        <span class="black-text">
+                                                           {% autoescape off %}{{ a }}{% endautoescape %}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+
+
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- SLIDERS -->
+                    </div>
+                    <div id="video" class="col s12 m12 center" style="background-color: #000; height: 400px; margin-top: 0.5%">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/E6Jz3VG6OpA" frameborder="0"></iframe>
+                    </div>
+                    <div id="patrocinadores" class="col s12 m12" style="height: 400px; margin-top: 0.5%">
+                        <iframe width="100%" height="100%" src="gallery" frameborder="0"></iframe>
+                    </div>
+                </div>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons"></i>¿Qué es Mashca de Corazón?</div>
+                        <div class="collapsible-body" style="background-color: #eee"><p>Es un modelo de gestión constructiva, hemos consolidado el proyecto junto empresas de renombre en la región;  dentro del concepto general del CD está implícitamente y explícitamente la identidad alegre y cordial del pueblo latacungueño, también es un modelo de gestión inclusiva para proyectos emergentes y existentes que reflejen la identidad de la ciudad.</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons"></i>¿Para qué vamos a utilizar el dinero recaudado?</div>
+                        <div class="collapsible-body" style="background-color: #eee"><p>Para cubrir el costo de la producción del disco, que consta de colaboraciones de artistas de Latacunga como: Rafaėl Santacruz, Ángeles Parreño, Meche Parreño, Trio Klero, Margoth Osorio, Valverde, The Glass, Escuela de artes Latacunga, María Limosnas, Lisbeth Pincha, Melany Parreño, Xhaviero.</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons"></i>¿Qué se va a poder realizar si se recauda entre el 0 y el 25%?</div>
+                        <div class="collapsible-body" style="background-color: #eee"><p>Produciremos un disco que contendrá 4 canciones.</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons"></i>¿Si se sobrepasa el 25%?</div>
+                        <div class="collapsible-body" style="background-color: #eee"><p>Produciremos un disco que contendrá 6 canciones.</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons"></i>¿Si se sobrepasa el 50%?</div>
+                        <div class="collapsible-body" style="background-color: #eee"><p>Produciremos un disco que contendrá 8 canciones.</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons"></i>¿Si se sobrepasa el 75%?</div>
+                        <div class="collapsible-body" style="background-color: #eee"><p>Produciremos un disco que contendrá 10 canciones.</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons"></i>¿Dónde recibo mis recompensas?</div>
+                        <div class="collapsible-body" style="background-color: #eee"><p>Terminada la campaña te avisaremos a tu correo electrónico dónde y cuándo retirarlas.<br>Las recompensas se entregarán en las ciudades de Quito, Guayaquil y Cuenca.</p></div>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+
+        <!-- Cupon Modal -->
+<div id="modal-cupon" class="modal row" style="width: 30%;">
+    <div class="">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="input-field col m12 s12">
+                    <form action="" method="post">
+                        <input id="input_text" name="input_text" type="text" length="10">
+                    <label for="input_text">Ingrese su cupón</label>
+                    <div class="row">
+                        <div class="col offset-m6 m6">
+                            <button  type=submit id="submit" value="SEND" class="waves-effect waves-light btn center" style="background-color: #00E676;
+                            width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">done</i></button>
+                        </div>
+
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!--       Cerrar el modelo  -->
+
+
+
+
+
+
+ <!-- RECOMPENSAS -->
+            <div class="col m4 s12">
+                <h4 class="center">Recompensas</h4>
+                <!-- Recompensa ITEM -->
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Aportar $5,00<i class="material-icons right">more_vert</i></span>
+                        <br>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                {% if user and not user.is_anonymous %}
+                                    <div class="collapsible-header center" style="background-color: #46b7b4; width: 100%; color: #fff;">Aportar</div>
+                                    <div class="collapsible-body">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col m12">
+                                            <div class="row">
+
+                                                <div id="paypal-5" class="col m4 s12 center">
+                                                    {{ form5.render }}
+                                                </div>
+
+
+                                                <div id="transfer-5" class="col m4 s12 center">
+                                                    <a href="#modal-transfer-5" class="waves-effect waves-light btn modal-trigger" style="background-color: #46b7b4; color: #fff; border-radius: 20px">Transferencia</a>
+                                                </div>
+
+                                                <!-- Begin Forms-Ocultos -->
+                                                <!-- Cupon -->
+                                                <div class="row">
+                                                    <div id="input-cupon-5" class="col m12 s12 center" style="width: 100%;display: none">
+                                                        <div class="col m4"></div>
+                                                        <div class="input-field col m12 s12">
+                                                            <input id="input_text" type="text" length="10">
+                                                            <label for="input_text">Ingrese su cupón</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col m8"></div>
+                                                    <div id="boton-env-5" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #00E676; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">done</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="boton-can-5" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #d0181e; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">close</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Transfer -->
+                                                    <div id="modal-transfer-5" class="modal" style="width: 40%">
+                                                        <div class="modal-content">
+                                                            <h4>Transferecia ó Depósito Bancario</h4>
+                                                            <p>Para realizar el aporte de $5.00 hágalo a la cuenta: 2100131798.
+                                                            <br>Cuenta Corriente, Banco Pichincha.
+                                                            <br>Andrés Burbano.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End Forms-Ocultos -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {% else %}
+                                    <div class="collapsible-header center modal-trigger" style="background-color: #46b7b4; width: 100%; color: #fff;" href="#login-f">Aportar</div>
+
+                                {% endif %}
+
+
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                        <p>Adhesivo + cupón + publicación en mural (nombre y foto)</p>
+                    </div>
+                </div>
+                <!-- Recompensa ITEM -->
+
+                <!-- Recompensa ITEM -->
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Aportar $10,00<i class="material-icons right">more_vert</i></span>
+                        <br>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                {% if user and not user.is_anonymous %}
+                                    <div class="collapsible-header center" style="background-color: #3c73ad; width: 100%; color: #fff;">Aportar</div>
+                                    <div class="collapsible-body">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col m12">
+                                            <div class="row">
+
+                                                <div id="paypal-5" class="col m4 s12 center">
+                                                    {{ form10.render }}
+
+
+                                                </div>
+
+                                                <div class="col m4 s12 center">
+                                                    <a href="#modal-cupon" class="waves-effect waves-light btn modal-trigger" style="background-color: #3c73ad; color: #fff; border-radius: 20px">Cupón</a>
+                                                </div>
+
+                                                <div id="transfer-5" class="col m4 s12 center">
+                                                    <a href="#modal-transfer-5" class="waves-effect waves-light btn modal-trigger" style="background-color: #3c73ad; color: #fff; border-radius: 20px">Transfer</a>
+                                                </div>
+
+                                                <!-- Begin Forms-Ocultos -->
+                                                <!-- Cupon -->
+                                                <div class="row">
+                                                    <div id="input-cupon-5" class="col m12 s12 center" style="width: 100%;display: none">
+                                                        <div class="col m4"></div>
+                                                        <div class="input-field col m12 s12">
+                                                            <input id="input_text" type="text" length="10">
+                                                            <label for="input_text">Ingrese su cupón</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col m8"></div>
+                                                    <div id="boton-env-5" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #00E676; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">done</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="boton-can-5" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #d0181e; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">close</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Transfer -->
+                                                    <div id="modal-transfer-5" class="modal" style="width: 40%">
+                                                        <div class="modal-content">
+                                                            <h4>Transferecia ó Depósito Bancario</h4>
+                                                            <p>Para realizar el aporte de $5.00 hágalo a la cuenta: 2100131798.
+                                                            <br>Cuenta Corriente, Banco Pichincha.
+                                                            <br>Andrés Burbano.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End Forms-Ocultos -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {% else %}
+                                    <div class="collapsible-header center modal-trigger" style="background-color: #3c73ad; width: 100%; color: #fff;" href="#login-f">Aportar</div>
+
+                                {% endif %}
+
+
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                        <p>Adhesivo + cupón + publicación en mural (nombre y foto)</p>
+                    </div>
+                </div>
+                <!-- Recompensa ITEM -->
+
+                <!-- Recompensa ITEM -->
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Aportar $20,00<i class="material-icons right">more_vert</i></span>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+
+                                   {% if user and not user.is_anonymous %}
+                                    <div class="collapsible-header center" style="background-color: #D50000; width: 100%; color: #fff;">Aportar</div>
+                                <div class="collapsible-body">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col m12">
+                                            <div class="row">
+
+                                                <div id="paypal-20" class="col m4 s12 center">
+                                                    {{ form20.render }}
+                                                    {% csrf_token %}
+
+                                                </div>
+
+                                                <div class="col m4 s12 center">
+                                                    <a href="#modal-cupon" class="waves-effect waves-light btn modal-trigger" style="background-color: #D50000; color: #fff; border-radius: 20px">Cupón</a>
+                                                </div>
+
+                                                <div id="transfer-20" class="col m4 s12 center">
+                                                    <a href="#modal-transfer-20" class="waves-effect waves-light btn modal-trigger" style="background-color: #D50000; color: #fff; border-radius: 20px">Transfer</a>
+                                                </div>
+
+                                                <!-- Begin Forms-Ocultos -->
+                                                <!-- Cupon -->
+                                                <div class="row">
+                                                    <div id="input-cupon-20" class="col m12 s12 center" style="width: 100%;display: none">
+                                                        <div class="col m4"></div>
+                                                        <div class="input-field col m12 s12">
+                                                            <input id="input_text" type="text" length="10">
+                                                            <label for="input_text">Ingrese su cupón</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col m8"></div>
+                                                    <div id="boton-env-20" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #00E676; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">done</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="boton-can-20" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #d0181e; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">close</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Transfer -->
+                                                    <div id="modal-transfer-20" class="modal" style="width: 35%">
+                                                        <div class="modal-content">
+                                                            <h4>Transferecia ó Depósito Bancario</h4>
+                                                            <p>Para realizar el aporte de $20.00 hágalo a la cuenta: 2100131798.
+                                                                <br>Cuenta Corriente, Banco Pichincha.
+                                                                <br>Andrés Burbano.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End Forms-Ocultos -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {% else %}
+                                    <div class="collapsible-header center  modal-trigger" style="background-color: #D50000; width: 100%; color: #fff;" href="#login-f">Aportar</div>
+
+                                {% endif %}
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                        <p>Adhesivo + cupón + CD + publicación en mural (nombre y foto)</p>
+                    </div>
+                </div>
+                <!-- Recompensa ITEM -->
+                <!-- Recompensa ITEM -->
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Aportar $100,00<i class="material-icons right">more_vert</i></span>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+
+                                 {% if user and not user.is_anonymous%}
+<div class="collapsible-header center" style="background-color: #f29107; width: 100%; color: #fff;">Aportar</div>
+                                <div class="collapsible-body">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col m12">
+                                            <div class="row">
+
+                                                <div id="paypal-100" class="col m4 s12 center">
+                                                    {{ form100.render }}
+                                                </div>
+
+                                                <div  class="col m4 s12 center">
+                                                    <a href="#modal-cupon" class="waves-effect waves-light btn modal-trigger" style="background-color: #f29107; color: #fff; border-radius: 20px">Cupón</a>
+                                                </div>
+
+                                                <div id="transfer-100" class="col m4 s12 center">
+                                                    <a href="#modal-transfer-100" class="waves-effect waves-light btn modal-trigger" style="background-color: #f29107; color: #fff; border-radius: 20px">Transfer</a>
+                                                </div>
+
+                                                <!-- Begin Forms-Ocultos -->
+                                                <!-- Cupon -->
+                                                <div class="row">
+                                                    <div id="input-cupon-100" class="col m12 s12 center" style="width: 100%;display: none">
+                                                        <div class="col m4"></div>
+                                                        <div class="input-field col m12 s12">
+                                                            <input id="input_text" type="text" length="10">
+                                                            <label for="input_text">Ingrese su cupón</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col m8"></div>
+                                                    <div id="boton-env-100" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #00E676; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">done</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="boton-can-100" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #d0181e; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">close</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Transfer -->
+                                                    <div id="modal-transfer-100" class="modal" style="width: 35%">
+                                                        <div class="modal-content">
+                                                            <h4>Transferecia ó Depósito Bancario</h4>
+                                                            <p>Para realizar el aporte de $100.00 hágalo a la cuenta: 2100131798.
+                                                                <br>Cuenta Corriente, Banco Pichincha.
+                                                                <br>Andrés Burbano.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End Forms-Ocultos -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    {% else %}
+  <div class="collapsible-header center modal-trigger" style="background-color: #f29107; width: 100%; color: #fff;" href="#login-f">Aportar</div>
+                                {% endif %}
+
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                        <p>50 Adhesivo + cupón + 6 CD + 5 camisetas + publicación en mural (nombre y foto)</p>
+                    </div>
+                </div>
+                <!-- Recompensa ITEM -->
+                <!-- Recompensa ITEM -->
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Aportar $500,00<i class="material-icons right">more_vert</i></span>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+
+                                 {% if user and not user.is_anonymous%}
+<div class="collapsible-header center" style="background-color: #003764; width: 100%; color: #fff;">Aportar</div>
+                                <div class="collapsible-body">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col m12">
+                                            <div class="row">
+
+                                                <div id="paypal-500" class="col l4 m4 s12  center">
+                                                    {{ form500.render }}
+                                                </div>
+
+                                                <div class="col l4 m4 s12 center">
+                                                    <a href="#modal-cupon" class="waves-effect waves-light btn modal-trigger" style="background-color: #003764; color: #fff; border-radius: 20px">Cupón</a>
+                                                </div>
+
+                                                <div id="transfer-500" class="col l4 m4 s12 center">
+                                                    <a href="#modal-transfer-500" class="waves-effect waves-light btn modal-trigger" style="background-color: #003764; color: #fff; border-radius: 20px">Transfer</a>
+                                                </div>
+
+                                                <!-- Begin Forms-Ocultos -->
+                                                <!-- Cupon -->
+                                                <div class="row">
+                                                    <div id="input-cupon-500" class="col m12 s12 center" style="width: 100%;display: none">
+                                                        <div class="col m4"></div>
+                                                        <div class="input-field col m12 s12">
+                                                            <input id="input_text" type="text" length="10">
+                                                            <label for="input_text">Ingrese su cupón</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col m8"></div>
+                                                    <div id="boton-env-500" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #00E676; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">done</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="boton-can-500" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #d0181e; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">close</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Transfer -->
+                                                    <div id="modal-transfer-500" class="modal" style="width: 35%">
+                                                        <div class="modal-content">
+                                                            <h4>Transferecia ó Depósito Bancario</h4>
+                                                            <p>Para realizar el aporte de $500.00 hágalo a la cuenta: 2100131798.
+                                                                <br>Cuenta Corriente, Banco Pichincha.
+                                                                <br>Andrés Burbano.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End Forms-Ocultos -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    {% else %}
+                                        <div class="collapsible-header center modal-trigger" style="background-color: #003764; width: 100%; color: #fff;" href="#login-f">Aportar</div>
+                                {% endif %}
+
+
+
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                        <p>100 Adhesivo + cupón + 20 CD + 10 camisetas + publicación en mural (nombre y foto)</p>
+                    </div>
+                </div>
+                <!-- Recompensa ITEM -->
+                <!-- Recompensa ITEM -->
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Aportar $1.000,00<i class="material-icons right">more_vert</i></span>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+
+
+
+                                 {% if user and not user.is_anonymous%}
+                                        <div class="collapsible-header center" style="background-color: #8c124e; width: 100%; color: #fff;">Aportar</div>
+                                <div class="collapsible-body">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col m12">
+                                            <div class="row">
+
+                                                <div id="paypal-1000" class="col m4 s12 center">
+                                                    {{ form1000.render }}
+                                                </div>
+
+                                                <div id="cupon-1000" class="col m4 s12 center">
+                                                    <a class="waves-effect waves-light btn" style="background-color: #8c124e; color: #fff; border-radius: 20px">Cupón</a>
+                                                </div>
+
+                                                <div id="transfer-1000" class="col m4 s12 center">
+                                                    <a href="#modal-transfer-1000" class="waves-effect waves-light btn modal-trigger" style="background-color: #8c124e; color: #fff; border-radius: 20px">Transfer</a>
+                                                </div>
+
+                                                <!-- Begin Forms-Ocultos -->
+                                                <!-- Cupon -->
+                                                <div class="row">
+                                                    <div id="input-cupon-1000" class="col m12 s12 center" style="width: 100%;display: none">
+                                                        <div class="col m4"></div>
+                                                        <div class="input-field col m12 s12">
+                                                            <input id="input_text" type="text" length="10">
+                                                            <label for="input_text">Ingrese su cupón</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col m8"></div>
+                                                    <div id="boton-env-1000" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #00E676; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">done</i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="boton-can-1000" class="col m2 s12 center" style="display: none">
+                                                        <div>
+                                                            <a class="waves-effect waves-light btn center" style="background-color: #d0181e; width: 100%; color: #fff; border-radius: 20px"><i class="material-icons center">close</i></a>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <!-- Transfer -->
+                                                    <div id="modal-transfer-1000" class="modal" style="width: 35%">
+                                                        <div class="modal-content">
+                                                            <h4>Transferecia ó Depósito Bancario</h4>
+                                                            <p>Para realizar el aporte de $1000.00 hágalo a la cuenta: 2100131798.
+                                                                <br>Cuenta Corriente, Banco Pichincha.
+                                                                <br>Andrés Burbano.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End Forms-Ocultos -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    {% else %}
+                                        <div class="collapsible-header center modal-trigger" style="background-color: #8c124e; width: 100%; color: #fff;" href="#login-f">Aportar</div>
+                                {% endif %}
+
+
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                        <p>100 Adhesivo + cupón + 80 CD + 10 camisetas + publicación en mural (nombre y foto)</p>
+                    </div>
+                </div>
+                <!-- Recompensa ITEM -->
+
+            </div>
+        </div>
+<!-- RECOMPENSAS -->
+
+    </div>
+</section>
+<!-- Blog -->
+
+
+<!-- VIDEO SECTION -->
+<section class="parallax-container scrollspy">
+    <div class="parallax video-landing">
+        <img src="{% static "jocha/images/cover.jpg" %}" alt="lata">
+    </div>
+
+</section>
+<!-- VIDEO SECTION -->
+<!-- FOOTER -->
+<footer class="page-footer teal" style="margin-bottom: -20px">
+    <div class="row">
+
+       <div class="col s12 m12 l12 center" style="color: white;">
+           Hecho con Machica 💪 desde - <a href="http://coworkinglatacunga.com/">Coworking Latacunga</a>, Para Latacunga
+
+       </div>
+
+    </div>
+</footer>
+<!-- FOOTER -->
+
+
+
+<!--Import jQuery before materialize.js-->
+
+<script type="text/javascript" src="{% static "jocha/js/jquery-2.1.1.min.js" %}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="{% static "jocha/js/materialize.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jocha/js/backgroundVideo.min.js" %}"></script>
+<script src="{% static "jocha/js/contador/jquery.plugin.js" %}"></script>
+<script src="{% static "jocha/js/contador/jquery.countdown.js" %}"></script>
+<script src="{% static "jocha/js/init.js" %}"></script>
+
+
+
+<script >
+    $( "#progressbar" ).progressbar({
+        value: {{ porcentaje }}
+    });
+</script>
+
+
+<script>
+        var austDay = new Date();
+    austDay = new Date({{ pry.fecha_limite.year }}, {{ pry.fecha_limite.month }}-1, {{ pry.fecha_limite.day }});
+    $('#defaultCountdown').countdown({until: austDay});
+    $('#year').text(austDay.getFullYear());
+
+</script>
+<script src="{% static "jocha/js/sweetalert.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "jocha/css/sweetalert.css" %}">
+    <script >
+    swal("MUchas gracias por aportar en Mashca de Corazón!", "success")
+    </script>
+
+<script type="text/JavaScript">
+      setTimeout("location.href = 'http://lajocha.com';",10000);
+ </script>
+</body>

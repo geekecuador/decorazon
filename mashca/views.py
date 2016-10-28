@@ -45,7 +45,7 @@ def mashcaindex(request):
     ano = '2016 '
     comentarios_twitter = zip(comentarios, imagenes_perfil)
     pepe = 0
-    donantes = Donaciones.objects.all().count()
+    donantes = '5'
     mensaje = ''
     print pry.fecha_limite.year
     if request.method == 'POST':
@@ -183,7 +183,13 @@ def logout(request):
 
 @csrf_exempt
 def payment_done(request):
-    return render(request, 'jocha.html')
+    pry = Proyecto.objects.get(clave="MASHC")
+    porcentaje = int((pry.cantidadalcanzada * 100) / pry.cantidadbase)
+    ano = '2016 '
+    pepe = 0
+    donantes = '5'
+    mensaje = ''
+    return render(request, 'done.html',{})
 
 
 @csrf_exempt
