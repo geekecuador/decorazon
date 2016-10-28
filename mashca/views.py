@@ -19,7 +19,6 @@ import time
 
 @csrf_exempt
 def mashcaindex(request):
-    host = request.get_host()
     invoice = time.strftime("%H:%M:%S") + time.strftime("%d/%m/%y")
     TWITTER_APP_KEY = 'O8eDCWgXvylYlGabAci93ppd7'  # supply the appropriate value
     TWITTER_APP_KEY_SECRET = 'pILt8uKye8rKgJTjYCsTX6z8Vv6zBsXacCBkyqOjbGr7srz0bm'
