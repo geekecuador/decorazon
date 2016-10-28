@@ -81,10 +81,8 @@ def mashcaindex(request):
             "invoice": invoice,
             'currency_code': 'USD',
             "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
-            'return_url': 'http://{}{}'.format(host,
-                                               reverse('done')),
-            'cancel_return': 'http://{}{}'.format(host,
-                                                  reverse('canceled')),
+            'return_url': 'http://lajocha.com/mashca/done/',
+            'cancel_return': 'http://lajocha.com/mashca/canceled/',
             "custom": x.user.username,
 
         }
@@ -94,11 +92,9 @@ def mashcaindex(request):
             "item_name": "Mashca de Corazón $10",
             "invoice": invoice,
             'currency_code': 'USD',
-               "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
-            'return_url': 'http://{}{}'.format(host,
-                                               reverse('done')),
-            'cancel_return': 'http://{}{}'.format(host,
-                                                  reverse('canceled')),
+            "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
+            'return_url': 'http://lajocha.com/mashca/done/',
+            'cancel_return': 'http://lajocha.com/mashca/canceled/',
             "custom": x.user.username,
 
         }
@@ -109,10 +105,8 @@ def mashcaindex(request):
             "invoice": invoice,
             'currency_code': 'USD',
             "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
-            'return_url': 'http://{}{}'.format(host,
-                                               reverse('done')),
-            'cancel_return': 'http://{}{}'.format(host,
-                                                  reverse('canceled')),
+            'return_url': 'http://lajocha.com/mashca/done/',
+            'cancel_return': 'http://lajocha.com/mashca/canceled/',
             "custom": x.user.username,
 
         }
@@ -122,11 +116,9 @@ def mashcaindex(request):
             "item_name": "Mashca de Corazón $100",
             "invoice": invoice,
             'currency_code': 'USD',
-            "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
-            'return_url': 'http://{}{}'.format(host,
-                                               reverse('done')),
-            'cancel_return': 'http://{}{}'.format(host,
-                                                  reverse('canceled')),
+            "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
+            'return_url': 'http://lajocha.com/mashca/done/',
+            'cancel_return': 'http://lajocha.com/mashca/canceled/',
             "custom": x.user.username,
 
         }
@@ -136,11 +128,9 @@ def mashcaindex(request):
             "item_name": "Mashca de Corazón $500",
             "invoice": invoice,
             'currency_code': 'USD',
-            "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
-            'return_url': 'http://{}{}'.format(host,
-                                               reverse('done')),
-            'cancel_return': 'http://{}{}'.format(host,
-                                                  reverse('canceled')),
+            "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
+            'return_url': 'http://lajocha.com/mashca/done/',
+            'cancel_return': 'http://lajocha.com/mashca/canceled/',
             "custom": x.user.username,
 
         }
@@ -150,11 +140,9 @@ def mashcaindex(request):
             "item_name": "Mashca de Corazón $1000",
             "invoice": invoice,
             'currency_code': 'USD',
-            "notify_url": 'http://{}{}'.format(host, reverse('paypal-ipn')),
-            'return_url': 'http://{}{}'.format(host,
-                                               reverse('done')),
-            'cancel_return': 'http://{}{}'.format(host,
-                                                  reverse('canceled')),
+            "notify_url": 'http://{}{}'.format(host,reverse('paypal-ipn')),
+            'return_url': 'http://lajocha.com/mashca/done/',
+            'cancel_return': 'http://lajocha.com/mashca/canceled/',
             "custom": x.user.username,
 
         }
