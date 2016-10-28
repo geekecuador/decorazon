@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'decorazon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'urban_prod',
+        'NAME': 'urban_jocha',
         'USER': 'u_urban',
         'PASSWORD': 'davidpullo',
         'HOST': 'localhost',
