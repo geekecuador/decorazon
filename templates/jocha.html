@@ -119,7 +119,7 @@
             <h6>Aportantes</h6>
 
             <div id="progressbar" style="width: 50%;"></div>
-            <h6>${{ pry.cantidadalcanzada }} alcanzado de ${{ pry.cantidadbase }}<br><br></h6>
+            <h6>{{ pry.cantidadalcanzada|to_int }}  de {{ pry.cantidadbase|to_int }} discos<br><br></h6>
             <div class="row">
                 <div class="col m12">
                     <div id="defaultCountdown"></div>

@@ -31,8 +31,8 @@
           <file leaf-file-name="jocha.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/jocha.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+                <state relative-caret-position="226">
+                  <caret line="121" column="81" selection-start-line="121" selection-start-column="81" selection-end-line="121" selection-end-column="81" />
                   <folding>
                     <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -49,7 +49,7 @@
                     <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#div#5;n#div#2;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#5;n#div#2;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <marker date="1477698420000" expanded="true" signature="6991:7010" ph="..." />
+                    <marker date="1477700829000" expanded="true" signature="7001:7020" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -105,6 +105,18 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/mashca/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="8" selection-end-column="44" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mashca/urls.py">
               <provider selected="true" editor-type-id="text-editor">
@@ -120,8 +132,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mashca/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="580">
-                  <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
+                <state relative-caret-position="820">
+                  <caret line="189" column="18" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
                   <folding>
                     <element signature="e#24#60#0" expanded="true" />
                     <element signature="e#3062#3508#0" expanded="false" />
@@ -175,7 +187,7 @@
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <marker date="1477698420000" expanded="true" signature="6991:7010" ph="..." />
+                    <marker date="1477700829000" expanded="true" signature="7001:7020" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -297,7 +309,6 @@
         <option value="$PROJECT_DIR$/static/jocha/js/init.js" />
         <option value="$PROJECT_DIR$/instalar.txt" />
         <option value="$PROJECT_DIR$/mashca/apps.py" />
-        <option value="$PROJECT_DIR$/mashca/models.py" />
         <option value="$PROJECT_DIR$/decorazon/urls.py" />
         <option value="$PROJECT_DIR$/mashca/admin.py" />
         <option value="$PROJECT_DIR$/mashca/urls.py" />
@@ -309,6 +320,7 @@
         <option value="$PROJECT_DIR$/templates/done.html" />
         <option value="$PROJECT_DIR$/mashca/views.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/mashca/models.py" />
         <option value="$PROJECT_DIR$/templates/jocha.html" />
       </list>
     </option>
@@ -1076,16 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mashca/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/decorazon/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1189,16 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/landing/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/cancel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1220,22 +1212,6 @@
         <state relative-caret-position="586">
           <caret line="903" column="58" selection-start-line="903" selection-start-column="58" selection-end-line="903" selection-end-column="58" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mashca/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
-          <folding>
-            <element signature="e#24#60#0" expanded="true" />
-            <element signature="e#3062#3508#0" expanded="false" />
-            <element signature="e#3533#3983#0" expanded="false" />
-            <element signature="e#4008#4455#0" expanded="false" />
-            <element signature="e#4481#4930#0" expanded="false" />
-            <element signature="e#4956#5405#0" expanded="false" />
-            <element signature="e#5432#5883#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1271,10 +1247,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mashca/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="8" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/landing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mashca/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="189" column="18" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
+          <folding>
+            <element signature="e#24#60#0" expanded="true" />
+            <element signature="e#3062#3508#0" expanded="false" />
+            <element signature="e#3533#3983#0" expanded="false" />
+            <element signature="e#4008#4455#0" expanded="false" />
+            <element signature="e#4481#4930#0" expanded="false" />
+            <element signature="e#4956#5405#0" expanded="false" />
+            <element signature="e#5432#5883#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/jocha.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+        <state relative-caret-position="226">
+          <caret line="121" column="81" selection-start-line="121" selection-start-column="81" selection-end-line="121" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1291,7 +1303,7 @@
             <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#div#5;n#div#2;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#5;n#div#2;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1477698420000" expanded="true" signature="6991:7010" ph="..." />
+            <marker date="1477700829000" expanded="true" signature="7001:7020" ph="..." />
           </folding>
         </state>
       </provider>
