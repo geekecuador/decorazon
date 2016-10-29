@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d56e897-983a-4fc5-a596-3ca7d06a7e83" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/jocha.html" afterPath="$PROJECT_DIR$/templates/jocha.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cancel.html" afterPath="$PROJECT_DIR$/templates/cancel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/done.html" afterPath="$PROJECT_DIR$/templates/done.html" />
     </list>
     <ignored path="decorazon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +29,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.6928307">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="jocha.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="jocha.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/jocha.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="226">
@@ -147,11 +148,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="done.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="done.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/done.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="586">
-                  <caret line="903" column="58" selection-start-line="903" selection-start-column="58" selection-end-line="903" selection-end-column="58" />
+                <state relative-caret-position="226">
+                  <caret line="123" column="111" selection-start-line="123" selection-start-column="111" selection-end-line="123" selection-end-column="111" />
                   <folding />
                 </state>
               </provider>
@@ -160,8 +161,8 @@
           <file leaf-file-name="cancel.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/cancel.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="226">
+                  <caret line="121" column="110" selection-start-line="121" selection-start-column="110" selection-end-line="121" selection-end-column="110" />
                   <folding />
                 </state>
               </provider>
@@ -317,11 +318,12 @@
         <option value="$PROJECT_DIR$/decorazon/settings.py" />
         <option value="$PROJECT_DIR$/landing/views.py" />
         <option value="$PROJECT_DIR$/landing/urls.py" />
-        <option value="$PROJECT_DIR$/templates/done.html" />
         <option value="$PROJECT_DIR$/mashca/views.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/mashca/models.py" />
         <option value="$PROJECT_DIR$/templates/jocha.html" />
+        <option value="$PROJECT_DIR$/templates/cancel.html" />
+        <option value="$PROJECT_DIR$/templates/done.html" />
       </list>
     </option>
   </component>
@@ -1191,26 +1193,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cancel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/landing/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/done.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="903" column="58" selection-start-line="903" selection-start-column="58" selection-end-line="903" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1305,6 +1291,22 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1477701071000" expanded="true" signature="7021:7040" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cancel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="121" column="110" selection-start-line="121" selection-start-column="110" selection-end-line="121" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/done.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="123" column="111" selection-start-line="123" selection-start-column="111" selection-end-line="123" selection-end-column="111" />
+          <folding />
         </state>
       </provider>
     </entry>
