@@ -92,14 +92,21 @@
         <div class="col s12 m12">
             <div class="card">
                 <div class="card-image">
-
-                    <img src="{% static "jocha/images/david.jpg" %}"style="height: 300px">
+                    <img class="responsive-img" src="images/login-img.jpg">
                 </div>
+                <h5 class="center">Iniciar con:</h5>
                 <div class="card-action center-block">
-                    <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="waves-effect waves-light btn modal-trigger" style="background-color: #46b7b4">Iniciar con Facebook</a>
-                    <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}" class="waves-effect waves-light btn modal-trigger" style="background-color: #46b7b4">Iniciar con Twitter</a>
-                </div>
 
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <a href="#login-f" class="waves-effect waves-light btn modal-trigger" style="background-color: #3b5998 ;width: 100%; margin-top: 1%;"><i class="icon-facebook center-block"></i></a>
+                        </div>
+                        <div class="col s12 m6">
+                            <a href="#login-f" class="waves-effect waves-light btn modal-trigger" style="background-color: #00aced  ;width: 100%; margin-top: 1%;"><i class="icon-twitter center-block"></i></a>
+                        </div>
+                    </div>
+                    <!--<a href="#login-f" class="waves-effect waves-light btn modal-trigger" style="width: 100%;">Iniciar con Facebook</a>-->
+                </div>
             </div>
         </div>
     </div>
