@@ -61,9 +61,6 @@
                 <li><a href="#" style="color: #00b8d4">LAS JOCHAS</a></li>
                 <li><a href="#blog" style="color: #00b8d4">PROYECTOS</a></li>
                 <li><a href="#" style="color: #00b8d4">CROWDFOUNDING</a></li>
-
-
-
                                 {% if user and not user.is_anonymous %}
 
 {#                 <a href="{% url 'user-logout' %}">Logout</a>#}
@@ -79,7 +76,16 @@
             </ul>
 
             <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Navbar Link</a></li>
+               {% if user and not user.is_anonymous %}
+                   <img src="{{photo.url }}" alt="perfil" style="width: 50px; border-radius: 800px; margin-top: 6px; margin-left: 4px">
+                     <li><a href="logout/" style="color: #00b8d4">SALIR</a></li>
+
+                   {% else %}
+                 <li><a href="#login-f" class="modal-trigger">Iniciar Sesión</a></li>
+
+
+                {% endif %}
+
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons" style="color: #00b8d4">menu</i></a>
         </div>
