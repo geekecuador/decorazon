@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d56e897-983a-4fc5-a596-3ca7d06a7e83" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jocha/font/fontello.eot" afterPath="$PROJECT_DIR$/static/jocha/font/fontello.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jocha/font/fontello.ttf" afterPath="$PROJECT_DIR$/static/jocha/font/fontello.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jocha/font/fontello.woff" afterPath="$PROJECT_DIR$/static/jocha/font/fontello.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jocha/font/fontello.woff2" afterPath="$PROJECT_DIR$/static/jocha/font/fontello.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jocha/font/fontello.svg" afterPath="$PROJECT_DIR$/static/jocha/font/fontello.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/jocha.html" afterPath="$PROJECT_DIR$/templates/jocha.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jocha/css/fontello.css" afterPath="$PROJECT_DIR$/static/jocha/css/fontello.css" />
     </list>
     <ignored path="decorazon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +29,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.6928307">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="jocha.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="jocha.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/jocha.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="480">
@@ -44,16 +40,6 @@
                     <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <marker date="1477787981000" expanded="true" signature="7574:7593" ph="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fontello.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/static/jocha/css/fontello.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="855">
-                  <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -312,6 +298,7 @@
         <option value="$PROJECT_DIR$/templates/cancel.html" />
         <option value="$PROJECT_DIR$/templates/done.html" />
         <option value="$PROJECT_DIR$/templates/jocha.html" />
+        <option value="$PROJECT_DIR$/static/jocha/css/fontello.css" />
       </list>
     </option>
   </component>
@@ -1253,6 +1240,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/jocha/css/fontello.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/jocha.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1263,14 +1258,6 @@
             <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1477787981000" expanded="true" signature="7574:7593" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/jocha/css/fontello.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
